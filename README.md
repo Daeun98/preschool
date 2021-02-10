@@ -1,3 +1,3 @@
 # preschool
 
-https://daeun98.github.io/children/
+https://daeun98.github.io/preschool/
