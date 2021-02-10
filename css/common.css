@@ -1,17 +1,22 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Potta+One&display=swap');
 
+/* 1025px 이상 화면 */
 .row {max-width:1170px; padding:0 15px; margin:0 auto;}
 
 body {font-family: 'Nanum Gothic', sans-serif;}
 
 /* header-outer구역 */
+#header.on .outer {margin-top:-42px;}
+#header.on {position: fixed; top:0; left:0; width:100%;
+     background:#fff; z-index:999999;}
 #header .outer {
     background:#f76f6f;
     color:rgba(255,255,255,0.7);
     font-size:12px;
     padding:15px 0px;
     letter-spacing:-0.5px;/* 자간조절속성 */
+    transition:all 0.3s;
 }
 #header .sns {float:left;}
 #header .sns a {padding-right:20px;}
@@ -33,6 +38,8 @@ body {font-family: 'Nanum Gothic', sans-serif;}
     float:left;
 }
 #header h1:hover {color:#ffd23c;}
+#header .open,
+#header .close {display:none;}
 #nav {float:right;
     font-size:16px;
     /* border:1px solid #000; */
@@ -46,7 +53,7 @@ body {font-family: 'Nanum Gothic', sans-serif;}
 }
 #nav .depth1 > li:first-child {color:#ffd23c; padding-right:30px;}
 #nav .depth1 > li:last-child {padding-left:20px;}
-#nav .depth1 > li:hover {color:#ffd23c;}
+#nav .depth1 > li.on {color:#ffd23c;}
 #nav .depth1 > li > a > i {
     color:#ddd; padding-left:5px;
 }
@@ -69,11 +76,11 @@ body {font-family: 'Nanum Gothic', sans-serif;}
     border-top-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
-    position: absolute;
-    bottom:100%; left:20px;
+    position: absolute; bottom:100%;
+    left:50%; transform:translate(-50%);
 }
     
-#nav .depth1 > li:hover .depth2 {display:block;}
+#nav .depth1 > li.on .depth2 {display:block;}
 #nav .depth2 > li > a {
     padding:10px;
     display:block;
@@ -118,6 +125,8 @@ body {font-family: 'Nanum Gothic', sans-serif;}
 #footer .contact a:hover {
     color:rgba(255,255,255,1);
 }
+
+#footer .company p {margin-bottom:5px;}
 #footer .company span {
     padding:0 7px;
     /* border-right:1px solid rgba(255,255,255,0.5); */
@@ -144,4 +153,5 @@ body {font-family: 'Nanum Gothic', sans-serif;}
     font-size:85.7%;
     font-weight:normal;
 }
+
 
